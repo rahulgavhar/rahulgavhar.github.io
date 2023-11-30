@@ -4,8 +4,25 @@
     <title>Rahul's Portfolio</title>
     <meta charset="UTF-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <style>
+      #loading{
+    background: #ffffff url('https://i.ibb.co/vcPBz1S/loading.gif') no-repeat center center;
+    height:100vh;
+    width:100%;
+    position:fixed;
+    background-size:15%;
+    z-index:100;
+}
+    </style>
   </head>
   <body>
+    <div id="loading"></div>
     <h1>Heading</h1>
+    <script>
+      const preloader=document.getElementbyId('loading');
+      window.addEventListener("load", function(){
+        preloader.style.display="none";
+    })
+    </script>
   </body>
 </html>
