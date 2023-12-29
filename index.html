@@ -6,23 +6,37 @@
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <style>
       #loading{
-    background: #ffffff url('https://i.ibb.co/vcPBz1S/loading.gif') no-repeat center center;
-    height:100vh;
-    width:100%;
-    position:fixed;
-    background-size:15%;
-    z-index:100;
-}
+            background: #ffffff url(https://i.ibb.co/vcPBz1S/loading.gif) no-repeat center center;
+            height: -webkit-fill-available;
+            width: 100%;
+            position: fixed;
+            background-size: 25%;
+            z-index: 10000000;
+        }
+        @media only screen and (min-width: 750px) {
+            #loading{
+                height: 100%;
+                background-size: 15%;
+            }
+        }
     </style>
   </head>
   <body>
-    <div id="loading"></div>
 <h1>Heading</h1>
     <script>
-      const preloader=document.getElementById("loading");
-      window.addEventListener("load", function(){
-        preloader.style.display="none";
-    })
+      const lc='<div id="loading"></div>';
+        document.body.insertAdjacentHTML("afterbegin",lc);
+        const preloader=document.getElementById("loading");
+        document.onreadystatechange = function() {
+      
+    if (document.readyState !== "complete") {
+	    document.querySelector("body").style.visibility = "hidden";
+            preloader.style.visibility = "visible";
+    } else {
+	    preloader.style.visibility = "hidden";
+            document.querySelector("body").style.visibility = "visible";
+    }
+};
     </script>
   </body>
 </html>
