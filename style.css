@@ -502,7 +502,6 @@ main{
     font-weight: 500;
     cursor: pointer;
     padding: 15px 0 20px 0;
-    cursor: none;
 }
 .work .qualification-icon{
     font-size: 1.8rem;
@@ -825,6 +824,7 @@ main{
     }
     .menuActive .social-icons{
         opacity: 1;
+        position: fixed;
         transition-delay: 1.5s;
         transition: opacity 4.5s;
     }
@@ -849,7 +849,7 @@ main{
     }
     .menuActive .theme-button{
         opacity: 1;
-        position:absolute;
+        position:fixed;
         bottom: 90px;
         right: -1%;
     }
@@ -887,7 +887,9 @@ main{
     .qualification-data {
         grid-template-columns: 0.5fr max-content 0.5fr;
     }
-
+    .qualification-button{
+        cursor:none;
+    }
     .qualification-content {
         margin: auto;
     }
