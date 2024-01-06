@@ -1,19 +1,7 @@
 let MenuBtn = document.querySelector('#MenuBtn');
 
 MenuBtn.addEventListener('click', () => {
-    //menu btn rotate
-    document.querySelector('body').classList.toggle('menuActive');
-    if(MenuBtn.classList.contains('fa-xmark')) {
-        MenuBtn.style.transform = 'rotate(0deg)';
-        MenuBtn.style.transition = '0.5s';
-    }else{
-        MenuBtn.style.transform = 'rotate(90deg)';
-    MenuBtn.style.transition = '0.5s';
-    }
-    MenuBtn.classList.toggle('fa-xmark');
-
-    //Avoid background scroll when menu is active
-    document.querySelector('body').classList.toggle('noScroll');
+    openMenu();
 });
 
 // Type Writer Effect
