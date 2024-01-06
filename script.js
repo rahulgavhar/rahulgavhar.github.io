@@ -120,10 +120,6 @@ function themeChange() {
         document.querySelector('.bi-sun').setAttribute("class","bi bi-sun active");
         document.querySelector('.bi-moon').setAttribute("class","bi bi-moon glow");
 
-        hitTheme=true;
-        hideMenu();
-        hitTheme=undefined;
-
         //change :root
         document.querySelector(':root').style.setProperty('--bodyColor', '#ffffff');
         document.querySelector(':root').style.setProperty('--bgColor', '#dedede');
@@ -134,9 +130,6 @@ function themeChange() {
         document.querySelector('.bi-moon').setAttribute("class","bi bi-moon active");
         document.querySelector('.bi-sun').setAttribute("class","bi bi-sun glow");
         
-        hitTheme=true;
-        hideMenu();
-        hitTheme=undefined;
         //change :root
         document.querySelector(':root').style.setProperty('--bodyColor', '#000000');
         document.querySelector(':root').style.setProperty('--bgColor', '#141414');
