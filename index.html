@@ -19,7 +19,12 @@
       }
         document.onreadystatechange = function() {
           hideMenu();
-        }; 
+        };
+
+      //menu link clicked
+      function menuLinkclick(){
+        document.querySelector('body').classList.toggle('menuActive');
+      }
     </script>
   </head>
 
@@ -38,11 +43,11 @@
     <header id="menu">
       <nav>
         <ul>
-          <li data-id="home"><a href="#home">Home</a></li>
-          <li data-id="skills"><a href="#skills">Skills</a></li>
-          <li data-id="workexp"><a href="#work">Work Exp.</a></li>
-          <li data-id="projects"><a href="#projects">Projects</a></li>
-          <li data-id="contact"><a href="#contact">Contact</a></li>
+          <li data-id="home" onclick="menuLinkclick()"><a href="#home">Home</a></li>
+          <li data-id="skills" onclick="menuLinkclick()"><a href="#skills">Skills</a></li>
+          <li data-id="workexp" onclick="menuLinkclick()"><a href="#work">Work Exp.</a></li>
+          <li data-id="projects" onclick="menuLinkclick()"><a href="#projects">Projects</a></li>
+          <li data-id="contact" onclick="menuLinkclick()"><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="social-icons">
