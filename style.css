@@ -82,7 +82,7 @@ header{
     left: 0;
     top: 0;
     width: 70px;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -840,6 +840,7 @@ main{
     }
     .themechange{
         opacity: 0;
+        transition: 0s;
     }
     .menuActive .themechange{
         opacity: 1;
@@ -880,7 +881,9 @@ main{
     .qualification-section {
         width: fit-content;
     }
-    
+    #contact .cont-row .cont-form form input[type="submit"]{
+        cursor:none;
+    }
     .qualification-data {
         grid-template-columns: 0.5fr max-content 0.5fr;
     }
