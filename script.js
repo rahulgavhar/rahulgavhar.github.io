@@ -97,21 +97,12 @@ document.addEventListener("contextmenu", function(e){
 }, false);
 
 //carousel
-if(window.innerWidth <730){
-    const myCarouselElement = document.querySelector('.carousel')
-const carousel = new bootstrap.Carousel(myCarouselElement, {
-  interval: 2000,
-  wrap: false,
-  pause: false
-})
-}else{
-    const myCarouselElement = document.querySelector('.carousel')
+const myCarouselElement = document.querySelector('.carousel')
 const carousel = new bootstrap.Carousel(myCarouselElement, {
   interval: 2000,
   wrap: true,
   pause: false
 })
-}
 
 //themechange
 function themeChange() {
