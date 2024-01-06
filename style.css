@@ -284,7 +284,8 @@ main{
 #skills .skill-col{
     margin: 0 auto;
     margin-top: 70px;
-    width: 750px;
+    width: 100%;
+    max-width: 800px;
     background-color: var(--bgColor);
     box-shadow: var(--shadow);
     padding: 40px;
@@ -613,6 +614,7 @@ main{
     width:300px;
     border-radius: 20px;
     border: 1px solid white;
+    margin: 15px;
 }
 .project-explain{
     text-align: start;
@@ -727,10 +729,6 @@ main{
     border-radius: 50% solid var(--bgColor);
     transition: 0.5s ease-in-out;
 }
-.theme-button:active main{
-    opacity: 0 !important;
-    transition: 0s;
-}
 
 
 
@@ -783,7 +781,7 @@ main{
     }
     .menuActive header{
         left: 100%;
-        background: rgba(0, 0, 0, 50%);
+        background: var(--bodyColor)/0.5;
         position: fixed;
         inset: 0;
         width: 100%;
@@ -792,7 +790,6 @@ main{
         transition: 0.5s;
         z-index: 999;
         display: flex;
-        overflow: hidden;
     }
     .menuActive header nav ul li a{
         cursor:none;
@@ -837,7 +834,7 @@ main{
         flex-direction: row;
         bottom:28px;
         left: 32px;
-    }
+    } 
     main{
         margin-left: 0;
     }
@@ -853,15 +850,11 @@ main{
         opacity: 1;
         position:absolute;
         bottom: 90px;
-        right: 0.8%;
+        right: -1%;
     }
-    .menuActive .themechange .bi-sun{
+    .menuActive .themechange{
         transition-delay: 1.5s;
-        transition: opacity 4s ease-in-out;
-    }
-    .menuActive .themechange .bi-moon{
-        transition-delay: 1.5s;
-        transition: opacity 4s ease-in-out;
+        transition: opacity 2.5s ease-in-out;
     }
 }
 
