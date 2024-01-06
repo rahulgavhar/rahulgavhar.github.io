@@ -8,10 +8,9 @@
     <link rel="icon" type="image/x-icon" href="https://rahulgavhar.github.io/images/favicon.png">
     <link rel="stylesheet" href="style.css">
     <script>
-      var hitTheme = undefined;
       // main - opacity 0 while loading
       function hideMenu(){
-        if (document.readyState !== "complete" || hitTheme == false) {
+        if (document.readyState !== "complete") {
             document.querySelector("main").style.opacity = "0";
           } else {
               document.querySelector("main").style.transition = "2s ease";
