@@ -1,3 +1,6 @@
+//doesnt store cache
+document.head.insertAdjacentHTML('afterbegin','<meta http-equiv="Cache-control" content="no-cache">');
+
 let MenuBtn = document.querySelector('#MenuBtn');
 
 MenuBtn.addEventListener('click', () => {
