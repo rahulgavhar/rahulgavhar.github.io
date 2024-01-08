@@ -282,6 +282,7 @@ main{
     font-weight: 200;
 }
 #skills .skill-col{
+    position: relative;
     margin: 0 auto;
     margin-top: 70px;
     width: 100%;
@@ -298,6 +299,14 @@ main{
 }
 #skills .skill-col .skill-item{
     width: 100%;
+}
+#skills .skill-col .skill-item svg{
+    position: absolute;
+    top: -215px;
+    left: -12vw;
+    transform: rotate(-15deg);
+    animation: code 5s ease-in-out infinite;
+    z-index: -1;
 }
 #skills .skill-col .skill-item .skill-info{
     display: flex;
@@ -933,5 +942,34 @@ main{
     }
     .work .qualification-data{
         gap:0.5rem;
+    }
+}
+@media (min-width:930px) and (max-width:1120px){
+    #skills .skill-col .skill-item svg{
+        left:8vw;
+    }
+}
+@media (min-width:500px) and (max-width:930px){
+    #skills .skill-col .skill-item svg{
+        top:-150px;
+        left:5vw;
+    }
+}
+@media(max-width:500px){
+    #skills .skill-col .skill-item svg{
+        top:-150px;
+        left:7vw;
+    }
+
+}
+@keyframes code{
+    0%{
+        
+    }
+    50%{
+        top: -170px;
+    }
+    100%{
+        
     }
 }
