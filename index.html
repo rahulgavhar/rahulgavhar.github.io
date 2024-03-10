@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Portfolio | Rahul Gavhar</title>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Website of Rahul Gavhar. Computer Engineering Student at Thadomal Shahani Engineering College.">
+    <link rel="icon" type="image/x-icon" href="https://rahulgavhar.github.io/images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script>
+      // main - opacity 0 while loading
+      function hideMenu(){
+        if (document.readyState !== "complete") {
+            document.querySelector("main").style.opacity = "0";
+          } else {
+              document.querySelector("main").style.transition = "2s ease";
+              document.querySelector("main").style.opacity = "1";
+          }
+      }
+        document.onreadystatechange = function() {
+          hideMenu();
+        };
+      //openMenu on mobile
+      function openMenu(){
+         //menu btn rotate
+    document.querySelector('body').classList.toggle('menuActive');
+    if(MenuBtn.classList.contains('fa-xmark')) {
+        MenuBtn.style.transform = 'rotate(0deg)';
+        MenuBtn.style.transition = '0.5s';
+    }else{
+        MenuBtn.style.transform = 'rotate(90deg)';
+    MenuBtn.style.transition = '0.5s';
+    }
+    MenuBtn.classList.toggle('fa-xmark');
+
+    //Avoid background scroll when menu is active
+    document.querySelector('body').classList.toggle('noScroll');
+      }
+      //menu link clicked
+      function menuLinkclick(){
+        openMenu();
+      }
+    </script>
+  </head>
+
+  <body>
+    <span class="theme-button"  onclick="themeChange()">
+      <span class="themechange" data-theme="dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-sun" data-theme="light" viewBox="0 0 16 16">
+          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
+          <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/>
+        </svg>
+      </span>
+    </span>
+    <i class="fa-solid fa-bars-staggered" id="MenuBtn"></i>
+    <header id="menu">
+      <nav>
+        <ul>
+          <li data-id="home" onclick="menuLinkclick()"><a href="#home">Home</a></li>
+          <li data-id="skills" onclick="menuLinkclick()"><a href="#skills">Skills</a></li>
+          <li data-id="workexp" onclick="menuLinkclick()"><a href="#work">Work Exp.</a></li>
+          <li data-id="projects" onclick="menuLinkclick()"><a href="#projects">Projects</a></li>
+          <li data-id="contact" onclick="menuLinkclick()"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/rahulgavhar" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+          <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+        </svg></a>
+        <a href="https://github.com/rahulgavhar" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="Icon_icon__t_YgI Navbar_navIcon__lI_cE"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"></path></svg></a>
+        <a href="https://x.com/rahulgavhar" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+          <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+        </svg></a>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="padding border">
+        <div class="left-col">
+          <h1>Hi, This is <span>Rahul Gavhar</span><br>Front-End Developer</h1>
+          <p>I'm a <span class="typer"></span></p>
+          <p>Currently Pursuing a BE in Computer Engineering</p>
+          <a href="https://rahulgavhar.github.io/resume.pdf" class="globBtn" target="_blank">View Resume</a>
+        </div>
+        <a class="down-arrow" data-hidden="true"><svg stroke="currentColor" width="43" height="15" viewBox="0 0 43 15" aria-hidden="true"><path d="M1 1l20.5 12L42 1" stroke-width="2" fill="none"></path></svg></a>
+      </section>
+
+      <section id="skills" class="padding border">
+        <div class="col">
+          <h2 class="heading center">Skills</h2>
+          <p class="sub-para center">My Technical Level</p>
+          <div class="skill-col">
+
+            <div class="skill-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15vw" height="15vw" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16">
+                <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
+              </svg>
+              <div class="skill-info">
+                <h3>HTML</h3>
+                <h3>95%</h3>
+              </div>
+              <div class="outer-bar">
+                <div class="inner-bar" data-width="95"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <h3>CSS</h3>
+                <h3>80%</h3>
+              </div>
+              <div class="outer-bar">
+                <div class="inner-bar" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <h3>Javascript</h3>
+                <h3>75%</h3>
+              </div>
+              <div class="outer-bar">
+                <div class="inner-bar" data-width="75"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <h3>Bootstrap</h3>
+                <h3>70%</h3>
+              </div>
+              <div class="outer-bar">
+                <div class="inner-bar" data-width="70"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <h3>Python</h3>
+                <h3>85%</h3>
+              </div>
+              <div class="outer-bar">
+                <div class="inner-bar" data-width="85"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="work" id="work">
+        <h2>Education / Work Exp.</h2>
+        <p>My Journey</p>
+        <div class="qualification-container">
+            <div class="qualification-tabs">
+              <div class="qualification-button">
+                <i class="fa-solid fa-graduation-cap qualification-icon"></i>
+                <span>Education</span>
+              </div>
+            </div>
+          <div class="qualification__sections">
+            <div class="qualification-content">
+
+                  <div style="text-align: end;" class="qualification-data">
+                      <div>
+                        <h3 class="qualification-title">SSC 10th</h3>
+                        <span class="qualification-subtitle">Ryan International School, Kharghar</span>
+                        <div class="qualification-calendar">
+                          <i class="fa-solid fa-calendar"></i>
+                          <span>2020</span>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="qualification-rounder"></span>
+                        <span class="qualification-line"></span>
+                      </div>
+                    </div>
+
+
+                <div class="qualification-data">
+                  <div></div>
+                  <div>
+                    <span class="qualification-rounder"></span>
+                    <span class="qualification-line"></span>
+                  </div>
+                  <div>
+                    <h3 class="qualification-title">HSC 12th</h3>
+                    <span class="qualification-subtitle">Apeejay School, Kharghar</span>
+                    <div class="qualification-calendar">
+                      <i class="fa-solid fa-calendar"></i>
+                      <span>2020 - 2022</span>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div style="text-align: right;" class="qualification-data">
+                  <div>
+                    <h3 class="qualification-title">BE in Computer Engineering</h3>
+                    <span class="qualification-subtitle">Thadomal Shahani Engineering College</span>
+                    <div class="qualification-calendar">
+                      <i class="fa-solid fa-calendar"></i>
+                      <span>2023 - 2027 (pursuing)</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="qualification-rounder"></span>
+                    <span class="qualification-line"></span>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="padding" id="projects">
+        <h2>Projects</h2>
+        <p>My Work</p>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item item active" data-bs-interval="4000">
+              <div class="carousel-item-inner">
+                <img src="https://rahulgavhar.github.io/images/currencyconverter.png" alt="Currency Converter">
+                <div class="project-explain">
+                  <h3>1. Currency Converter App</h3>
+                  <p>A tool to easily convert money into a different currency.</p>
+                  <a href="http://rahulgavhar.github.io/currencyconverter" target="_blank" class="globBtn">Visit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                  <a href="http://gihub.com/rahulgavhar/currencyconverter" target="_blank" class="globBtn">Code <i class="fa-solid fa-code"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item item" data-bs-interval="4000">
+              <div class="carousel-item-inner">
+                <img src="https://rahulgavhar.github.io/images/hexxcars.png" alt="HexxCars">
+                <div class="project-explain">
+                  <h3>2. Car Rental Website</h3>
+                  <p>A place where you can reant a car at resonable prize.</p>
+                  <a href="http://rahulgavhar.github.io/hexxcars" target="_blank" class="globBtn">Visit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                  <a href="http://gihub.com/rahulgavhar/hexxcars" target="_blank" class="globBtn">Code <i class="fa-solid fa-code"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item item" data-bs-interval="4000">
+              <div class="carousel-item-inner">
+                <img src="https://rahulgavhar.github.io/images/weatherapp.png" alt="Weather App">
+                <div class="project-explain">
+                  <h3>3. Weather App</h3>
+                  <p>A tool to check the weather of any city in the world.</p>
+                  <a href="http://rahulgavhar.github.io/weatherapp" target="_blank" class="globBtn">Visit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                  <a href="http://gihub.com/rahulgavhar/weatherapp" target="_blank" class="globBtn">Code <i class="fa-solid fa-code"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item item" data-bs-interval="4000">
+              <div class="carousel-item-inner">
+                <img src="https://rahulgavhar.github.io/images/hotnfast.png" alt="HotnFast">
+                <div class="project-explain">
+                  <h3>4. Restaurant Website</h3>
+                  <p>Website to Order food directly at your doorstep.</p>
+                  <a href="http://rahulgavhar.github.io/hotnfast" target="_blank" class="globBtn">Visit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                  <a href="http://gihub.com/rahulgavhar/hotnfast" target="_blank" class="globBtn">Code <i class="fa-solid fa-code"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item item" data-bs-interval="4000">
+              <div class="carousel-item-inner">
+                <img src="https://rahulgavhar.github.io/images/multigames.png" alt="Multi Games">
+                <div class="project-explain">
+                  <h3>5. Mini Games Website</h3>
+                  <p>Website to relax when you are bored.</p>
+                  <a href="http://rahulgavhar.github.io/multigames" target="_blank" class="globBtn">Visit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                  <a href="http://gihub.com/rahulgavhar/multigames" target="_blank" class="globBtn">Code <i class="fa-solid fa-code"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item item" data-bs-interval="4000">
+              <div class="carousel-item-inner">
+                <img src="https://rahulgavhar.github.io/images/adblocker.png" alt="Multi Games">
+                <div class="project-explain">
+                  <h3>6. Adblocker Extension</h3>
+                  <p>Removes ad from all the Websites you visit.</p>
+                  <a href="https://github.com/rahulgavhar/adblocker" target="_blank" class="globBtn">Try It <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                  <a href="http://gihub.com/rahulgavhar/adblocker" target="_blank" class="globBtn">Code <i class="fa-solid fa-code"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item item" data-bs-interval="4000">
+              <div class="carousel-item-inner">
+                <img src="https://rahulgavhar.github.io/images/passwordgenerator.png" alt="Multi Games">
+                <div class="project-explain">
+                  <h3>7. Password Generator Extension</h3>
+                  <p>Generates Random Password & Stores It.</p>
+                  <a href="http://github.com/rahulgavhar/password-generator" target="_blank" class="globBtn">Try It <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                  <a href="http://github.com/rahulgavhar/password-generator" target="_blank" class="globBtn">Code <i class="fa-solid fa-code"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev carousel-buttons" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="carousel-control-next carousel-buttons" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </section>
+
+
+      <section style="padding-bottom: 80px;" class="padding" id="contact">
+        <div class="cont-row">
+          <div class="cont-info">
+            <h2 class="heading">Contact Me</h2>
+            <p class="sub-para">You can send me a message, about collaborations, freelance projects, job/internship offers.</p>
+
+            <div class="icon-list">
+              <p><i class="fa-solid fa-location-dot"></i>Mumbai, Maharashtra, India</p>
+              <p><i class="fa-solid fa-envelope-open"></i>rahulgm369@gmail.com</p>
+              <p><i class="fa-solid fa-phone"></i>+91 9421405261</p>
+            </div>
+          </div>
+          <div class="cont-form">
+            <form onsubmit="sendEmail(); reset(); return false;">
+              <input type="text" name="name" id="name" placeholder="Your Name" maxlength="25" required>
+              <input type="email" name="email" id="email" placeholder="Your Email" required>
+              <input type="text" name="subject" id="subject" placeholder="Subject" maxlength="50" required>
+              <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message..." maxlength="200" required></textarea>
+              <input class="globBtn" type="submit" value="Send Message">
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Copyright Text -->
+      <div class="magical"></div>
+      <div class="copy-text">
+        <p>&copy;Copyright 2024 Rahul Gavhar | All Rights Reserved</p>
+      </div>
+      
+      <div class="popup">
+        <div class="message"></div>
+      </div>
+    </main>
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+    <script src="https://kit.fontawesome.com/aa5f332820.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
