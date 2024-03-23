@@ -90,9 +90,80 @@ function popup(message) {
     }, 3000);
 }
 
-//Email from contact form
-//Code protected from leaking
-function _0x211c(_0x506308,_0x46f477){var _0x3ed81c=_0x3ed8();return _0x211c=function(_0x211cc9,_0x32b33e){_0x211cc9=_0x211cc9-0x1d6;var _0x3b79e5=_0x3ed81c[_0x211cc9];return _0x3b79e5;},_0x211c(_0x506308,_0x46f477);}function _0x3ed8(){var _0x2180b2=['<br>Subject:\x20','clear','name','getItem','398694mFYKYU','is_ahead','send','18BVyayl','localStorage','21631qYErXV','email','then','4169KoYtku','message','subject','value','Name:\x20','908045QmuWDO','3270575OjmTjI','<br>Message:\x20','1903752nGjejO','<br>Email:\x20','getElementById','32xiuBPb','1235796kGFZpM','Portfolio\x20Message:\x20','rahulgavharportfolio@gmail.com','8oSnGMP','wait','14660jMiDXU'];_0x3ed8=function(){return _0x2180b2;};return _0x3ed8();}(function(_0x4df5af,_0x1d3de5){var _0x204f3e=_0x211c,_0x969acd=_0x4df5af();while(!![]){try{var _0x3c0048=parseInt(_0x204f3e(0x1f1))/0x1*(-parseInt(_0x204f3e(0x1e1))/0x2)+parseInt(_0x204f3e(0x1ec))/0x3+parseInt(_0x204f3e(0x1e2))/0x4+-parseInt(_0x204f3e(0x1db))/0x5*(parseInt(_0x204f3e(0x1ef))/0x6)+parseInt(_0x204f3e(0x1dc))/0x7+parseInt(_0x204f3e(0x1e5))/0x8*(-parseInt(_0x204f3e(0x1de))/0x9)+-parseInt(_0x204f3e(0x1e7))/0xa*(-parseInt(_0x204f3e(0x1d6))/0xb);if(_0x3c0048===_0x1d3de5)break;else _0x969acd['push'](_0x969acd['shift']());}catch(_0x4008e0){_0x969acd['push'](_0x969acd['shift']());}}}(_0x3ed8,0x586fb));function sendEmail(){var _0xed18e2=_0x211c;window[_0xed18e2(0x1f0)][_0xed18e2(0x1eb)](_0xed18e2(0x1ed))!=null&&Number['parseInt'](''+new Date()['getTime']())-window[_0xed18e2(0x1f0)]['getItem'](_0xed18e2(0x1ed))<0xa*0x3c*0x3e8?popup(_0xed18e2(0x1e6)):Email[_0xed18e2(0x1ee)]({'SecureToken':'4af88da5-c5a1-43b1-8c4f-9fa1f97661c7','To':_0xed18e2(0x1e4),'From':_0xed18e2(0x1e4),'Subject':_0xed18e2(0x1e3)+document[_0xed18e2(0x1e0)](_0xed18e2(0x1d8))[_0xed18e2(0x1d9)],'Body':_0xed18e2(0x1da)+document[_0xed18e2(0x1e0)](_0xed18e2(0x1ea))[_0xed18e2(0x1d9)]+_0xed18e2(0x1df)+document[_0xed18e2(0x1e0)](_0xed18e2(0x1f2))['value']+_0xed18e2(0x1e8)+document[_0xed18e2(0x1e0)](_0xed18e2(0x1d8))[_0xed18e2(0x1d9)]+_0xed18e2(0x1dd)+document['getElementById'](_0xed18e2(0x1d7))[_0xed18e2(0x1d9)]})[_0xed18e2(0x1f3)](_0x418a19=>{var _0x5f33bf=_0xed18e2;window['localStorage'][_0x5f33bf(0x1e9)](),popup(_0x418a19);});}
+async function handleSubmit(event) {
+    event.preventDefault(); 
+
+    try {
+        await sendEmail(); 
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('subject').value = '';
+        document.getElementById('message').value = '';
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        
+    }
+}
+
+async function fetchToken() {
+    try {
+        const response = await fetch('https://rahulgavhar-github-io.vercel.app/api/token');
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+    }
+}
+
+
+async function sendEmail() {
+    let email = '';
+    let token = '';
+
+    try {
+        const data = await fetchToken();
+        if (data) {
+            email = data.secureemail;
+            token = data.securetoken;
+        } else {
+            throw new Error('Token data is undefined');
+        }
+
+        if (window.localStorage.getItem('is_ahead') != null &&
+            Number.parseInt(window.localStorage.getItem('is_ahead')) - new Date().getTime() < 600000) {
+            popup('wait');
+        } else {
+            const emailResponse = await Email.send({
+                SecureToken: token,
+                To: email,
+                From: email,
+                Subject: 'Portfolio Message: ' + document.getElementById('subject').value,
+                Body: 'Name: ' +
+                    document.getElementById('name').value +
+                    '<br>Email: ' +
+                    document.getElementById('email').value +
+                    '<br>Subject: ' +
+                    document.getElementById('subject').value +
+                    '<br>Message: ' +
+                    document.getElementById('message').value
+            });
+            window.localStorage.clear();
+            popup(emailResponse);
+        }
+    } catch (error) {
+        console.error('Error in sendEmail:', error);
+        popup('Error sending email: ' + error.message);
+    } finally {
+        email = '';
+        token = '';
+    }
+}
+
+
+  
 
 //disable right click
 document.addEventListener("contextmenu", function(e){
