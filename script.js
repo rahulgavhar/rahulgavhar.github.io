@@ -66,7 +66,10 @@ function popup(message) {
         document.querySelector('.popup .message').innerHTML = 'Email Sent Successfully! I will contact you soon';
         document.querySelector('.popup .message').style.color = '#2ecc71';
         window.localStorage.setItem("is_ahead",Number.parseInt(`${new Date().getTime()}`))
-        
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('subject').value = '';
+        document.getElementById('message').value = '';
     }else{
         if(message=="wait"){
             var display_timeleft = setInterval(()=>{
@@ -95,10 +98,6 @@ async function handleSubmit(event) {
 
     try {
         await sendEmail(); 
-        document.getElementById('name').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('subject').value = '';
-        document.getElementById('message').value = '';
     } catch (error) {
         console.error('Error submitting form:', error);
         
