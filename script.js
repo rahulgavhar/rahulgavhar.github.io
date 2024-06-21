@@ -132,7 +132,9 @@ async function sendEmail() {
         }
 
         if (window.localStorage.getItem('is_ahead') != null &&
-            Number.parseInt(window.localStorage.getItem('is_ahead')) - new Date().getTime() < 600000) {
+        Number.parseInt('' + new Date().getTime()) -
+          window.localStorage.getItem('is_ahead') <
+          600000) {
             popup('wait');
         } else {
             const emailResponse = await Email.send({
