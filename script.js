@@ -149,7 +149,9 @@ async function sendEmail() {
                     '<br>Subject: ' +
                     document.getElementById('subject').value +
                     '<br>Message: ' +
-                    document.getElementById('message').value
+                    document.getElementById('message').value +
+                    '<br>Website used: ' +
+                    window.location.href
             });
             window.localStorage.clear();
             popup(emailResponse);
