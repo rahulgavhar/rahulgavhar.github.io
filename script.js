@@ -118,7 +118,7 @@ async function sendEmail() {
             return;
         }
 
-        const response = await fetch('/api/send-email', {
+        const response = await fetch('https://rahulgavhar-github-io.vercel.app/api/send-email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
