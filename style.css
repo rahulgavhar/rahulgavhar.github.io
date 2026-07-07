@@ -745,7 +745,124 @@ main{
 
 
 
+/* Skills and Ratings Section */
+#skills .skill-category {
+    background-color: var(--bgColor);
+    padding: 20px;
+    border-left: 4px solid var(--themeColor);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+}
+#skills .skill-category h3 {
+    color: var(--themeColor);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+#skills .skill-category p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 25px;
+}
 
+#ratings, #achievements {
+    background-color: var(--bgColor);
+}
+#ratings .col h2, #achievements .col h2 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 5px;
+}
+#ratings .col p.sub-para, #achievements .col p.sub-para {
+    line-height: 15px;
+    font-size: 1.2rem;
+    margin: 20px 0 20px 0;
+    text-align: center;
+    font-weight: 200;
+}
+
+#achievements .achievements-container {
+    max-width: 800px;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.achievement-card {
+    background-color: var(--bodyColor);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid var(--themeColor);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: 0.4s;
+    text-align: left;
+}
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadowColor);
+}
+.achievement-icon {
+    font-size: 40px;
+    color: var(--themeColor);
+}
+.achievement-card h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.achievement-card p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+#ratings .ratings-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+.rating-card {
+    background-color: var(--bodyColor);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    width: 280px;
+    transition: 0.4s;
+    border-bottom: 4px solid var(--themeColor);
+}
+.rating-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px var(--shadowColor);
+}
+.rating-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+.rating-badge {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--themeColor);
+    margin-bottom: 10px;
+}
+.rating-desc {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.project-card-custom {
+    padding: 20px;
+}
+.project-card-custom .tech-stack {
+    color: var(--themeColor);
+    font-style: italic;
+    margin-bottom: 15px;
+}
 
 /* Media Queries */
 @media only screen and (max-width: 930px){

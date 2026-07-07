@@ -6,7 +6,7 @@ MenuBtn.addEventListener('click', () => {
 
 // Type Writer Effect
 let type = new Typed('.typer', {
-    strings: ['Front End Developer', 'Freelancer', 'Open Source Contributor'],
+    strings: ['Full Stack Developer', 'DevOps Expert', 'Open Source Contributor'],
     typeSpeed: 100,
     backSpeed: 50,
     backDelay: 1000,
@@ -100,68 +100,43 @@ async function handleSubmit(event) {
         await sendEmail(); 
     } catch (error) {
         console.error('Error submitting form:', error);
-        
     }
 }
-
-async function fetchToken() {
-    try {
-        const response = await fetch('https://rahulgavhar-github-io.vercel.app/api/token');
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('There was a problem with the fetch operation:', error);
-    }
-}
-
 
 async function sendEmail() {
-    let email = '';
-    let token = '';
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
 
     try {
-        const data = await fetchToken();
-        if (data) {
-            email = data.secureemail;
-            token = data.securetoken;
-        } else {
-            throw new Error('Token data is undefined');
+        if (window.localStorage.getItem('is_ahead') != null &&
+            Number.parseInt('' + new Date().getTime()) -
+            window.localStorage.getItem('is_ahead') <
+            600000) {
+            popup('wait');
+            return;
         }
 
-        if (window.localStorage.getItem('is_ahead') != null &&
-        Number.parseInt('' + new Date().getTime()) -
-          window.localStorage.getItem('is_ahead') <
-          600000) {
-            popup('wait');
-        } else {
-            const emailResponse = await Email.send({
-                SecureToken: token,
-                To: email,
-                From: email,
-                Subject: 'Portfolio Message: ' + document.getElementById('subject').value,
-                Body: 'Name: ' +
-                    document.getElementById('name').value +
-                    '<br>Email: ' +
-                    document.getElementById('email').value +
-                    '<br>Subject: ' +
-                    document.getElementById('subject').value +
-                    '<br>Message: ' +
-                    document.getElementById('message').value +
-                    '<br>Website used: ' +
-                    window.location.href
-            });
+        const response = await fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email, subject, message })
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.status === 'OK') {
             window.localStorage.clear();
-            popup(emailResponse);
+            popup('OK');
+        } else {
+            throw new Error(result.error || 'Failed to send email');
         }
     } catch (error) {
         console.error('Error in sendEmail:', error);
-        popup('Error sending email: ' + error.message);
-    } finally {
-        email = '';
-        token = '';
+        popup('fail');
     }
 }
 

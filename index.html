@@ -7,6 +7,7 @@
     <meta name="description" content="Portfolio Website of Rahul Gavhar. Computer Engineering Student at Thadomal Shahani Engineering College.">
     <link rel="icon" type="image/x-icon" href="https://rahulgavhar.github.io/images/favicon.png">
     <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script>
       // main - opacity 0 while loading
       function hideMenu(){
@@ -24,14 +25,15 @@
       function openMenu(){
          //menu btn rotate
     document.querySelector('body').classList.toggle('menuActive');
-    if(MenuBtn.classList.contains('fa-xmark')) {
+    if(MenuBtn.classList.contains('bx-x')) {
         MenuBtn.style.transform = 'rotate(0deg)';
         MenuBtn.style.transition = '0.5s';
     }else{
         MenuBtn.style.transform = 'rotate(90deg)';
     MenuBtn.style.transition = '0.5s';
     }
-    MenuBtn.classList.toggle('fa-xmark');
+    MenuBtn.classList.toggle('bx-x');
+    MenuBtn.classList.toggle('bx-menu-alt-right');
 
     //Avoid background scroll when menu is active
     document.querySelector('body').classList.toggle('noScroll');
@@ -54,7 +56,7 @@
         </svg>
       </span>
     </span>
-    <i class="fa-solid fa-bars-staggered" id="MenuBtn"></i>
+    <i class="bx bx-menu-alt-right" id="MenuBtn"></i>
     <header id="menu">
       <nav>
         <ul>
@@ -79,7 +81,7 @@
     <main>
       <section id="home" class="padding border">
         <div class="left-col">
-          <h1>Hi, This is <span>Rahul Gavhar</span><br>Front-End Developer</h1>
+          <h1>Hi, This is <span>Rahul Gavhar</span><br>Software Developer</h1>
           <p>I'm a <span class="typer"></span></p>
           <p>Currently Pursuing a BE in Computer Engineering</p>
           <a href="https://drive.google.com/file/d/1ZsIt7e7FqN8Ow4umMnlwEbWPnrcjAJ5E/view" class="globBtn" target="_blank">View Resume</a>
@@ -93,55 +95,237 @@
           <p class="sub-para center">My Technical Level</p>
           <div class="skill-col">
 
-            <div class="skill-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15vw" height="15vw" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16">
-                <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-              </svg>
-              <div class="skill-info">
-                <h3>HTML</h3>
-                <h3>95%</h3>
+            <div class="skill-group" style="width: 100%; margin-bottom: 40px; text-align: left;">
+              <h3 style="color: var(--themeColor); font-size: 24px; margin-bottom: 25px; font-weight: 700;">Programming Languages</h3>
+              <div class="skill-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15vw" height="15vw" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16">
+                  <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
+                </svg>
+                <div class="skill-info">
+                  <h3>Java</h3>
+                  <h3>90%</h3>
+                </div>
+                <div class="outer-bar">
+                  <div class="inner-bar" data-width="90"></div>
+                </div>
               </div>
-              <div class="outer-bar">
-                <div class="inner-bar" data-width="95"></div>
+              <div class="skill-item" style="margin-top: 25px;">
+                <div class="skill-info">
+                  <h3>C/C++</h3>
+                  <h3>85%</h3>
+                </div>
+                <div class="outer-bar">
+                  <div class="inner-bar" data-width="85"></div>
+                </div>
               </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <h3>CSS</h3>
-                <h3>80%</h3>
+              <div class="skill-item" style="margin-top: 25px;">
+                <div class="skill-info">
+                  <h3>Python</h3>
+                  <h3>85%</h3>
+                </div>
+                <div class="outer-bar">
+                  <div class="inner-bar" data-width="85"></div>
+                </div>
               </div>
-              <div class="outer-bar">
-                <div class="inner-bar" data-width="80"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <h3>Javascript</h3>
-                <h3>75%</h3>
-              </div>
-              <div class="outer-bar">
-                <div class="inner-bar" data-width="75"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <h3>Bootstrap</h3>
-                <h3>70%</h3>
-              </div>
-              <div class="outer-bar">
-                <div class="inner-bar" data-width="70"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <h3>Python</h3>
-                <h3>85%</h3>
-              </div>
-              <div class="outer-bar">
-                <div class="inner-bar" data-width="85"></div>
+              <div class="skill-item" style="margin-top: 25px;">
+                <div class="skill-info">
+                  <h3>JavaScript</h3>
+                  <h3>80%</h3>
+                </div>
+                <div class="outer-bar">
+                  <div class="inner-bar" data-width="80"></div>
+                </div>
               </div>
             </div>
 
+            <div class="skill-group" style="width: 100%; margin-bottom: 40px; text-align: left;">
+              <h3 style="color: var(--themeColor); font-size: 24px; margin-bottom: 25px; font-weight: 700;">Web Technologies</h3>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <h3>HTML/CSS</h3>
+                  <h3>95%</h3>
+                </div>
+                <div class="outer-bar">
+                  <div class="inner-bar" data-width="95"></div>
+                </div>
+              </div>
+              <div class="skill-item" style="margin-top: 25px;">
+                <div class="skill-info">
+                  <h3>React.js</h3>
+                  <h3>85%</h3>
+                </div>
+                <div class="outer-bar">
+                  <div class="inner-bar" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item" style="margin-top: 25px;">
+                <div class="skill-info">
+                  <h3>TailwindCSS</h3>
+                  <h3>80%</h3>
+                </div>
+                <div class="outer-bar">
+                  <div class="inner-bar" data-width="80"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-group" style="width: 100%; margin-bottom: 40px; text-align: left;">
+              <h3 style="color: var(--themeColor); font-size: 24px; margin-bottom: 25px; font-weight: 700;">Frameworks</h3>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <h3>Spring Boot</h3>
+                  <h3>85%</h3>
+                </div>
+                <div class="outer-bar">
+                  <div class="inner-bar" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item" style="margin-top: 25px;">
+                <div class="skill-info">
+                  <h3>Node.js (Express)</h3>
+                  <h3>80%</h3>
+                </div>
+                <div class="outer-bar">
+                  <div class="inner-bar" data-width="80"></div>
+                </div>
+              </div>
+              <div class="skill-item" style="margin-top: 25px;">
+                <div class="skill-info">
+                  <h3>FastAPI</h3>
+                  <h3>75%</h3>
+                </div>
+                <div class="outer-bar">
+                  <div class="inner-bar" data-width="75"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-group" style="width: 100%; text-align: left;">
+              <h3 style="color: var(--themeColor); font-size: 24px; margin-bottom: 25px; font-weight: 700;">Databases & Cloud</h3>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <h3>MongoDB & Redis</h3>
+                  <h3>85%</h3>
+                </div>
+                <div class="outer-bar">
+                  <div class="inner-bar" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item" style="margin-top: 25px;">
+                <div class="skill-info">
+                  <h3>SQL (MySQL, PostgreSQL)</h3>
+                  <h3>80%</h3>
+                </div>
+                <div class="outer-bar">
+                  <div class="inner-bar" data-width="80"></div>
+                </div>
+              </div>
+              <div class="skill-item" style="margin-top: 25px;">
+                <div class="skill-info">
+                  <h3>AWS, Docker & Kubernetes</h3>
+                  <h3>75%</h3>
+                </div>
+                <div class="outer-bar">
+                  <div class="inner-bar" data-width="75"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="ratings" class="padding border">
+        <div class="col">
+          <h2 class="heading center">Ratings</h2>
+          <p class="sub-para center">Competitive Programming Profile</p>
+          <div class="ratings-container">
+            <div class="rating-card leetcode-card" style="display: flex; flex-direction: column; justify-content: center; position: relative;">
+              <a href="https://leetcode.com/u/rahulgavhar" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+                <i class="bx bx-link-external" style="position: absolute; top: 20px; right: 20px; font-size: 16px; color: var(--themeColor); opacity: 0.8;"></i>
+                <h3>Leetcode</h3>
+                <p class="rating-badge">Knight (1923)</p>
+                <p class="rating-desc">700+ Problems Solved</p>
+              </a>
+              <a href="https://github.com/LeetCode-Feedback/LeetCode-Feedback/issues/27887" target="_blank" style="display: inline-block; margin-top: 15px; font-size: 14px; color: var(--themeColor); text-decoration: none; font-weight: 500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                Contributed Testcases <i class="bx bx-link-external" style="font-size: 13px;"></i>
+              </a>
+            </div>
+            <div class="rating-card codeforces-card" style="display: flex; flex-direction: column; justify-content: center; position: relative;">
+              <a href="https://codeforces.com/profile/rahulgavhar" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+                <i class="bx bx-link-external" style="position: absolute; top: 20px; right: 20px; font-size: 16px; color: var(--themeColor); opacity: 0.8;"></i>
+                <h3>Codeforces</h3>
+                <p class="rating-badge">Specialist (1419)</p>
+                <p class="rating-desc">Consistent Participant</p>
+              </a>
+            </div>
+            <div class="rating-card codechef-card" style="display: flex; flex-direction: column; justify-content: center; position: relative;">
+              <a href="https://www.codechef.com/users/rahulgavhar" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+                <i class="bx bx-link-external" style="position: absolute; top: 20px; right: 20px; font-size: 16px; color: var(--themeColor); opacity: 0.8;"></i>
+                <h3>CodeChef</h3>
+                <p class="rating-badge">3-star (1632)</p>
+                <p class="rating-desc">Active Contributor</p>
+              </a>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 40px;">
+            <a href="https://codolio.com/profile/rahulgavhar" target="_blank" class="globBtn">View on all Platforms <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="achievements" class="padding border">
+        <div class="col">
+          <h2 class="heading center">Achievements</h2>
+          <p class="sub-para center">Milestones & Recognitions</p>
+          <div class="achievements-container">
+            <div class="achievement-card" data-bs-toggle="collapse" data-bs-target="#hacksplosion-img" style="cursor: pointer; flex-direction: column; align-items: flex-start;">
+              <div style="display: flex; align-items: flex-start; gap: 20px; width: 100%;">
+                <i class="bx bx-trophy achievement-icon" style="margin-top: 5px; flex-shrink: 0;"></i>
+                <div style="flex: 1;">
+                  <h3>Grand Finalist - Deloitte Hacksplosion 2026</h3>
+                  <p style="margin-bottom: 0px;">National Level Hackathon among 22K+ Participants</p>
+                  <div class="collapse w-100" id="hacksplosion-img">
+                    <img src="assets/hacksplosion.jpg" alt="Deloitte Hacksplosion" style="width: 100%; border-radius: 8px; margin-top: 25px;">
+                  </div>
+                </div>
+                <i class="bx bx-chevron-down" style="visibility: hidden; font-size: 28px; color: var(--themeColor); margin-top: 5px; flex-shrink: 0;"></i>
+              </div>
+            </div>
+            
+            <div class="achievement-card">
+              <i class="bx bx-medal achievement-icon"></i>
+              <div style="width: 100%;">
+                <h3>Top 9 Finalist & Team Lead - AugenBlick 2026</h3>
+                <p style="margin-bottom: 10px;">Selected from 90 Teams</p>
+                <div>
+                   <a href="https://github.com/rahulgavhar/vestigate" target="_blank" class="globBtn" style="padding: 6px 12px; font-size: 13px; margin-right: 10px;">Github <i class="bx bxl-github"></i></a>
+                   <a href="https://youtu.be/evBlwyPmVjo" target="_blank" class="globBtn" style="padding: 6px 12px; font-size: 13px;">Demo Video <i class="bx bx-video"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="achievement-card" data-bs-toggle="collapse" data-bs-target="#codeuncode-img" style="cursor: pointer; flex-direction: column; align-items: flex-start;">
+              <div style="display: flex; align-items: flex-start; gap: 20px; width: 100%;">
+                <i class="bx bx-award achievement-icon" style="margin-top: 5px; flex-shrink: 0;"></i>
+                <div style="flex: 1;">
+                  <h3>Rank #49 in CodeUncode & Rank #4 in BigOhBattle</h3>
+                  <p style="margin-bottom: 0px;">Among 1500 and 250 Participants respectively</p>
+                  <div class="collapse w-100" id="codeuncode-img">
+                    <img src="assets/CodeUncode.png" alt="CodeUncode" style="width: 100%; border-radius: 8px; margin-top: 25px;">
+                  </div>
+                </div>
+                <i class="bx bx-chevron-down" style="visibility: hidden; font-size: 28px; color: var(--themeColor); margin-top: 5px; flex-shrink: 0;"></i>
+              </div>
+            </div>
+            
+            <div class="achievement-card">
+              <i class="bx bx-star achievement-icon"></i>
+              <div>
+                <h3>Rank #710 in Leetcode Biweekly Contest 181</h3>
+                <p>Among 45K+ Global Participants</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -152,7 +336,7 @@
         <div class="qualification-container">
             <div class="qualification-tabs">
               <div class="qualification-button">
-                <i class="fa-solid fa-graduation-cap qualification-icon"></i>
+                <i class="bx bxs-graduation qualification-icon"></i>
                 <span>Education</span>
               </div>
             </div>
@@ -164,7 +348,7 @@
                         <h3 class="qualification-title">SSC 10th</h3>
                         <span class="qualification-subtitle">Ryan International School, Kharghar</span>
                         <div class="qualification-calendar">
-                          <i class="fa-solid fa-calendar"></i>
+                          <i class="bx bx-calendar"></i>
                           <span>2020</span>
                         </div>
                       </div>
@@ -185,7 +369,7 @@
                     <h3 class="qualification-title">HSC 12th</h3>
                     <span class="qualification-subtitle">Apeejay School, Kharghar</span>
                     <div class="qualification-calendar">
-                      <i class="fa-solid fa-calendar"></i>
+                      <i class="bx bx-calendar"></i>
                       <span>2020 - 2022</span>
                     </div>
                   </div>
@@ -197,7 +381,7 @@
                     <h3 class="qualification-title">BE in Computer Engineering</h3>
                     <span class="qualification-subtitle">Thadomal Shahani Engineering College</span>
                     <div class="qualification-calendar">
-                      <i class="fa-solid fa-calendar"></i>
+                      <i class="bx bx-calendar"></i>
                       <span>2023 - 2027 (pursuing)</span>
                     </div>
                   </div>
@@ -207,6 +391,22 @@
                   </div>
                 </div>
 
+
+                <div class="qualification-data">
+                  <div></div>
+                  <div>
+                    <span class="qualification-rounder"></span>
+                    <span class="qualification-line"></span>
+                  </div>
+                  <div>
+                    <h3 class="qualification-title">Deloitte India (Summer Intern)</h3>
+                    <span class="qualification-subtitle">Deloitte India</span>
+                    <div class="qualification-calendar">
+                      <i class="fa-solid fa-calendar"></i>
+                      <span>Jun 2026 - Aug 2026</span>
+                    </div>
+                  </div>
+                </div>
 
               </div>
             </div>
@@ -221,88 +421,47 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item item active" data-bs-interval="4000">
-              <div class="carousel-item-inner">
-                <img src="https://rahulgavhar.github.io/images/currencyconverter.png" alt="Currency Converter">
-                <div class="project-explain">
-                  <h3>1. Currency Converter App</h3>
-                  <p>A tool to easily convert money into a different currency.</p>
-                  <a href="http://rahulgavhar.github.io/currencyconverter" target="_blank" class="globBtn">Visit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-                  <a href="http://gihub.com/rahulgavhar/currencyconverter" target="_blank" class="globBtn">Code <i class="fa-solid fa-code"></i></a>
+              <div class="carousel-item-inner project-card-custom">
+                <div class="project-explain w-100 text-center" style="width: 100%; text-align: center;">
+                  <img src="assets/codezen.png" alt="Codezen" style="width: 100%; max-width: 600px; border-radius: 10px; margin-bottom: 20px; box-shadow: var(--shadow);">
+                  <h3>1. Codezen - Contest & Interview Platform</h3>
+                  <p class="tech-stack" style="color: var(--themeColor); font-style: italic;">Node.js, Azure, PostgreSQL, Redis, FastAPI, Selenium</p>
+                  <p>Contests & Practice of DSA, Interviews for Top Rankers via WebRTC, and GraphQL based APIs. Includes CodeReplay to catch plagiarism, real-time leaderboard, and WebScraped Problems. Features Skill Extraction from Resume (NER) and Azure Event Triggered Judge0 usage.</p>
+                  <a href="https://codezen-oc74.onrender.com/" target="_blank" class="globBtn">Visit <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+                  <a href="https://github.com/rahulgavhar/codezen" target="_blank" class="globBtn">Code <i class="bx bx-code-alt"></i></a>
                 </div>
               </div>
             </div>
             <div class="carousel-item item" data-bs-interval="4000">
-              <div class="carousel-item-inner">
-                <img src="https://rahulgavhar.github.io/images/hexxcars.png" alt="HexxCars">
-                <div class="project-explain">
-                  <h3>2. Car Rental Website</h3>
-                  <p>A place where you can reant a car at resonable prize.</p>
-                  <a href="http://rahulgavhar.github.io/hexxcars" target="_blank" class="globBtn">Visit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-                  <a href="http://gihub.com/rahulgavhar/hexxcars" target="_blank" class="globBtn">Code <i class="fa-solid fa-code"></i></a>
+              <div class="carousel-item-inner project-card-custom">
+                <div class="project-explain w-100 text-center" style="width: 100%; text-align: center;">
+                  <img src="assets/patient-lens-ai.png" alt="PatientLensAI" style="width: 100%; max-width: 600px; border-radius: 10px; margin-bottom: 20px; box-shadow: var(--shadow);">
+                  <h3>2. PatientLensAI</h3>
+                  <p class="tech-stack" style="color: var(--themeColor); font-style: italic;">SpringBoot, Langchain, React.js, Kafka, gRPC, Docker, K8s, AWS</p>
+                  <p>Distributed microservices architecture with API Gateway routing. Reduced inter-service response latency by 40% using gRPC+Protobuf. Built 11 microservices with hybrid sync+async model. AI-powered RAG medical search and intelligent triage using Pinecone & LLMs.</p>
+                  <a href="https://patient-lens-ai.onrender.com/" target="_blank" class="globBtn">Visit <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+                  <a href="https://github.com/rahulgavhar/patient-lens-ai" target="_blank" class="globBtn">Code <i class="bx bx-code-alt"></i></a>
                 </div>
               </div>
             </div>
             <div class="carousel-item item" data-bs-interval="4000">
-              <div class="carousel-item-inner">
-                <img src="https://rahulgavhar.github.io/images/weatherapp.png" alt="Weather App">
-                <div class="project-explain">
-                  <h3>3. Weather App</h3>
-                  <p>A tool to check the weather of any city in the world.</p>
-                  <a href="http://rahulgavhar.github.io/weatherapp" target="_blank" class="globBtn">Visit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-                  <a href="http://gihub.com/rahulgavhar/weatherapp" target="_blank" class="globBtn">Code <i class="fa-solid fa-code"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item item" data-bs-interval="4000">
-              <div class="carousel-item-inner">
-                <img src="https://rahulgavhar.github.io/images/hotnfast.png" alt="HotnFast">
-                <div class="project-explain">
-                  <h3>4. Restaurant Website</h3>
-                  <p>Website to Order food directly at your doorstep.</p>
-                  <a href="http://rahulgavhar.github.io/hotnfast" target="_blank" class="globBtn">Visit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-                  <a href="http://gihub.com/rahulgavhar/hotnfast" target="_blank" class="globBtn">Code <i class="fa-solid fa-code"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item item" data-bs-interval="4000">
-              <div class="carousel-item-inner">
-                <img src="https://rahulgavhar.github.io/images/multigames.png" alt="Multi Games">
-                <div class="project-explain">
-                  <h3>5. Mini Games Website</h3>
-                  <p>Website to relax when you are bored.</p>
-                  <a href="http://rahulgavhar.github.io/multigames" target="_blank" class="globBtn">Visit <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-                  <a href="http://gihub.com/rahulgavhar/multigames" target="_blank" class="globBtn">Code <i class="fa-solid fa-code"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item item" data-bs-interval="4000">
-              <div class="carousel-item-inner">
-                <img src="https://rahulgavhar.github.io/images/adblocker.png" alt="Multi Games">
-                <div class="project-explain">
-                  <h3>6. Adblocker Extension</h3>
-                  <p>Removes ad from all the Websites you visit.</p>
-                  <a href="https://github.com/rahulgavhar/adblocker" target="_blank" class="globBtn">Try It <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-                  <a href="http://gihub.com/rahulgavhar/adblocker" target="_blank" class="globBtn">Code <i class="fa-solid fa-code"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item item" data-bs-interval="4000">
-              <div class="carousel-item-inner">
-                <img src="https://rahulgavhar.github.io/images/passwordgenerator.png" alt="Multi Games">
-                <div class="project-explain">
-                  <h3>7. Password Generator Extension</h3>
-                  <p>Generates Random Password & Stores It.</p>
-                  <a href="http://github.com/rahulgavhar/password-generator" target="_blank" class="globBtn">Try It <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-                  <a href="http://github.com/rahulgavhar/password-generator" target="_blank" class="globBtn">Code <i class="fa-solid fa-code"></i></a>
+              <div class="carousel-item-inner project-card-custom">
+                <div class="project-explain w-100 text-center" style="width: 100%; text-align: center;">
+                  <img src="assets/quick-eats.png" alt="QuickEats" style="width: 100%; max-width: 600px; border-radius: 10px; margin-bottom: 20px; box-shadow: var(--shadow);">
+                  <h3>3. QuickEats - Scalable Ordering, Delivery</h3>
+                  <p class="tech-stack" style="color: var(--themeColor); font-style: italic;">Redis, Node.js, Reactjs, Socket.IO, MongoDB</p>
+                  <p>HOT areas are cached using Redis, reducing load-time by 80%. Uses WebSockets to track real-time location of delivery agent & SSEs for order updates. Real-time dispatch engine using geospatial querying and agent allocation strategies.</p>
+                  <a href="https://quick-eats.onrender.com/" target="_blank" class="globBtn">Visit <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+                  <a href="https://github.com/rahulgavhar/quick-eats" target="_blank" class="globBtn">Code <i class="bx bx-code-alt"></i></a>
                 </div>
               </div>
             </div>
           </div>
           <button class="carousel-control-prev carousel-buttons" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <i class="fa-solid fa-chevron-left"></i>
+            <i class="bx bx-chevron-left"></i>
           </button>
           <button class="carousel-control-next carousel-buttons" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <i class="fa-solid fa-chevron-right"></i>
+            <i class="bx bx-chevron-right"></i>
           </button>
         </div>
       </section>
@@ -315,9 +474,9 @@
             <p class="sub-para">You can send me a message, about collaborations, freelance projects, job/internship offers.</p>
 
             <div class="icon-list">
-              <p><i class="fa-solid fa-location-dot"></i>Mumbai, Maharashtra, India</p>
-              <p><i class="fa-solid fa-envelope-open"></i>rahulgm369@gmail.com</p>
-              <p><i class="fa-solid fa-phone"></i>+91 9421405261</p>
+              <p><i class="bx bxs-map"></i>Mumbai, Maharashtra, India</p>
+              <p><i class="bx bx-envelope-open"></i>rahulgm369@gmail.com</p>
+              <p><i class="bx bxs-phone"></i>+91 9421405261</p>
             </div>
           </div>
           <div class="cont-form">
@@ -347,9 +506,8 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
-    <script src="https://kit.fontawesome.com/aa5f332820.js" crossorigin="anonymous"></script>
+
     <script src="script.js"></script>
   </body>
 </html>

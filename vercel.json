@@ -2,8 +2,8 @@
   "version": 2,
   "routes": [
     {
-      "src": "/api/token.js",
-      "dest": "/api/token.js"
+      "src": "/api/send-email",
+      "dest": "/api/send-email.js"
     },
     {
       "src": "/(.*)",
